@@ -1,7 +1,7 @@
 import { createEnquiry, type EnquiryInput } from "@/lib/repository";
 import { buildEnquiryMessage, whatsappUrl } from "@/lib/site";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
 const MAX_LENGTH = 1200;
 

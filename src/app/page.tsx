@@ -15,8 +15,6 @@ import WhyMountExports from "@/components/WhyMountExports";
 import { FAQS, HERO_SLIDES } from "@/lib/content";
 import { getGalleryItems, getProducts } from "@/lib/repository";
 
-export const dynamic = "force-dynamic";
-
 export default async function HomePage() {
   const [products, gallery] = await Promise.all([getProducts(), getGalleryItems()]);
   const productNames = products.map((product) => product.name);

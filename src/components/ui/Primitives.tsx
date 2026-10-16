@@ -43,8 +43,8 @@ export function Reveal({
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (reduce || typeof IntersectionObserver === "undefined") {
-      setVisible(true);
-      return;
+      const id = requestAnimationFrame(() => setVisible(true));
+      return () => cancelAnimationFrame(id);
     }
 
     const observer = new IntersectionObserver(
@@ -143,13 +143,15 @@ export function StoneImage({
   width,
   height,
 }: StoneImageProps) {
+  const [prevSrc, setPrevSrc] = useState(src);
   const [current, setCurrent] = useState(src);
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
+  if (prevSrc !== src) {
+    setPrevSrc(src);
     setCurrent(src);
     setLoaded(false);
-  }, [src]);
+  }
 
   return (
     <img

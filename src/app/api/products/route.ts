@@ -1,7 +1,7 @@
 import { getGalleryItems, getProducts } from "@/lib/repository";
 import { PRODUCT_CATEGORIES } from "@/lib/content";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
 /**
  * Read-only catalogue endpoint so the product collection and gallery can be

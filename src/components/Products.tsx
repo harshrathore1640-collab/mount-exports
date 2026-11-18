@@ -143,7 +143,7 @@ export default function Products({ products }: { products: ProductRecord[] }) {
                         Own Quarry
                       </span>
                     )}
-                    {product.slug === "patagonia" && (
+                    {product.slug !== "titanium-gold" && product.categories.includes("Exotic Stone") && (
                       <span className="absolute top-3 left-3 z-10 border border-champagne/40 bg-espresso/90 px-2.5 py-1 text-[0.625rem] font-semibold tracking-[0.2em] text-champagne uppercase shadow-md backdrop-blur-sm">
                         Exotic Stone
                       </span>

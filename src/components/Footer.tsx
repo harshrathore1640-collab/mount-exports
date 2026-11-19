@@ -43,8 +43,31 @@ export default function Footer({ productNames }: { productNames: string[] }) {
             </a>
           </div>
 
+          {/* categories */}
+          <nav aria-label="Stone Categories" className="lg:col-span-2">
+            <p className="label-xs text-taupe">Categories</p>
+            <ul className="mt-6 space-y-3.5">
+              {[
+                { name: "Patagonia", href: "#categories" },
+                { name: "Exotic Stones", href: "#categories" },
+                { name: "Granite", href: "#categories" },
+                { name: "Marble", href: "#categories" },
+              ].map((cat) => (
+                <li key={cat.name}>
+                  <a
+                    href={cat.href}
+                    className="group inline-flex items-center gap-3 text-[0.9375rem] text-beige/80 transition-colors hover:text-champagne"
+                  >
+                    <span className="h-px w-0 bg-champagne transition-all duration-400 group-hover:w-5" />
+                    {cat.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
           {/* navigation */}
-          <nav aria-label="Footer navigation" className="lg:col-span-3">
+          <nav aria-label="Footer navigation" className="lg:col-span-2">
             <p className="label-xs text-taupe">Explore</p>
             <ul className="mt-6 space-y-3.5">
               {NAV_LINKS.map((link) => (
@@ -58,47 +81,11 @@ export default function Footer({ productNames }: { productNames: string[] }) {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="#faq"
-                  className="group inline-flex items-center gap-3 text-[0.9375rem] text-beige/80 transition-colors hover:text-champagne"
-                >
-                  <span className="h-px w-0 bg-champagne transition-all duration-400 group-hover:w-5" />
-                  FAQ
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          {/* collection */}
-          <nav aria-label="Collection" className="lg:col-span-2">
-            <p className="label-xs text-taupe">Collection</p>
-            <ul className="mt-6 space-y-3.5">
-              {productNames.map((name) => (
-                <li key={name}>
-                  <a
-                    href="#products"
-                    className="group inline-flex items-center gap-3 text-[0.9375rem] text-beige/80 transition-colors hover:text-champagne"
-                  >
-                    <span className="h-px w-0 bg-champagne transition-all duration-400 group-hover:w-5" />
-                    {name}
-                  </a>
-                </li>
-              ))}
-              <li>
-                <a
-                  href="#gallery"
-                  className="group inline-flex items-center gap-3 text-[0.9375rem] text-beige/80 transition-colors hover:text-champagne"
-                >
-                  <span className="h-px w-0 bg-champagne transition-all duration-400 group-hover:w-5" />
-                  Stone Gallery
-                </a>
-              </li>
             </ul>
           </nav>
 
           {/* contact */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-4">
             <p className="label-xs text-taupe">Contact</p>
             <ul className="mt-6 space-y-5">
               <li>

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRightIcon, ChevronLeftIcon, ChevronRightIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import { Cta, StoneImage } from "@/components/ui/Primitives";
+import { selectStoneCategory } from "@/components/StoneCategories";
 import { TRUST_STRIP, type HeroSlide } from "@/lib/content";
 import { BUSINESS, GENERAL_WHATSAPP_URL } from "@/lib/site";
 
@@ -97,8 +98,8 @@ export default function Hero({ slides }: { slides: HeroSlide[] }) {
           </p>
 
           <div className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center sm:gap-4">
-            <Cta href="#products" variant="champagne" icon={<ArrowRightIcon className="size-4" />}>
-              Explore Our Collection
+            <Cta href="#categories" variant="champagne" icon={<ArrowRightIcon className="size-4" />}>
+              Explore Stone Categories
             </Cta>
             <Cta
               href={GENERAL_WHATSAPP_URL}
@@ -109,6 +110,21 @@ export default function Hero({ slides }: { slides: HeroSlide[] }) {
             >
               Enquire on WhatsApp
             </Cta>
+          </div>
+
+          {/* Direct Category Quick Navigation Pills */}
+          <div className="mt-8 flex flex-wrap items-center gap-2 pt-2">
+            <span className="label-xs text-taupe mr-2 hidden sm:inline-block">Stone Pillars:</span>
+            {["Patagonia", "Exotic Stones", "Granite", "Marble"].map((catName) => (
+              <button
+                key={catName}
+                type="button"
+                onClick={() => selectStoneCategory(catName)}
+                className="border border-champagne/30 bg-espresso/70 px-3.5 py-1.5 text-[0.6875rem] tracking-[0.16em] text-champagne uppercase backdrop-blur-md transition-all duration-300 hover:border-champagne hover:bg-champagne hover:text-espresso cursor-pointer"
+              >
+                {catName}
+              </button>
+            ))}
           </div>
         </div>
 

@@ -33,11 +33,11 @@ const EMPTY: Fields = {
 };
 
 const GENERIC_INTERESTS = [
-  "Marble — Blocks",
-  "Marble — Slabs",
-  "Granite — Blocks",
-  "Granite — Slabs",
-  "Multiple stones / not decided yet",
+  "Patagonia — Exotic Quartzite",
+  "Exotic Stones — Blocks & Slabs",
+  "Granite — Blocks & Slabs",
+  "Marble — Blocks & Slabs",
+  "Multiple stones / project requirement",
 ];
 
 type Status =

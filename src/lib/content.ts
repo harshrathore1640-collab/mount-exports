@@ -24,7 +24,7 @@ export const PRODUCTS: ProductRecord[] = [
     description: "Extracted from our own quarry with bold black movement and striking natural character.",
     detail: `${SHARED_DETAIL} Sourced directly from our own quarry, Titanium Gold features a dramatic dark mineral field with strong golden and amber movement — suited to statement flooring, bookmatched feature walls, countertops and architectural facades. Direct quarry ownership guarantees supply continuity and meticulous block grading.`,
     formatLabel: "Own Quarry · Blocks & Slabs",
-    categories: ["Exotic Stone", "Granite", "Blocks", "Slabs"],
+    categories: ["Exotic Stones", "Granite", "Blocks", "Slabs"],
     primaryImage: "/images/products/titanium-gold-slab.jpg",
     detailImage: "/images/products/titanium-gold-block.jpg",
     sortOrder: 1,
@@ -36,7 +36,7 @@ export const PRODUCTS: ProductRecord[] = [
     description: "Exotic stone featuring crystalline quartz fields and dramatic natural veining.",
     detail: `${SHARED_DETAIL} Patagonia is an internationally prized exotic stone displaying translucent quartz pockets, warm earthy undertones and dramatic visual movement. Exceptional for backlit feature installations, luxury countertops, and high-end residential and commercial architecture.`,
     formatLabel: "Exotic Blocks & Slabs",
-    categories: ["Patagonia", "Exotic Stone", "Granite", "Slabs"],
+    categories: ["Patagonia", "Exotic Stones", "Granite", "Slabs"],
     primaryImage: "/images/products/patagonia-bookmatch.jpg",
     detailImage: "/images/products/patagonia-backlit.jpg",
     sortOrder: 2,
@@ -48,7 +48,7 @@ export const PRODUCTS: ProductRecord[] = [
     description: "Deep black exotic granite with dramatic swirling currents of amber, gold and silver quartz.",
     detail: `${SHARED_DETAIL} Cosmic Black is a premier exotic stone displaying a rich dark crystalline bedrock enriched with cosmic waves of gold, amber, and silver quartz. Ideal for luxury waterfall kitchen islands, feature walls, bathroom vanities and high-end hospitality projects. Available in block and jumbo slab formats.`,
     formatLabel: "Exotic Blocks & Slabs",
-    categories: ["Exotic Stone", "Granite", "Blocks", "Slabs"],
+    categories: ["Exotic Stones", "Granite", "Blocks", "Slabs"],
     primaryImage: "/images/products/cosmic-black-slab.jpg",
     detailImage: "/images/products/exotic-black-lightning-block.jpg",
     sortOrder: 3,
@@ -60,7 +60,7 @@ export const PRODUCTS: ProductRecord[] = [
     description: "Deep black exotic granite with striking linear quartz striations and bold contrast.",
     detail: `${SHARED_DETAIL} Titanium Black is a commanding exotic stone featuring a dense black mineral base intersected by expressive white and silver crystalline veining. Highly sought after for bookmatched feature walls, statement kitchen islands, architectural cladding and luxury bath spaces.`,
     formatLabel: "Exotic Slabs",
-    categories: ["Exotic Stone", "Granite", "Slabs"],
+    categories: ["Exotic Stones", "Granite", "Slabs"],
     primaryImage: "/images/products/exotic-black-wave-slab.jpg",
     detailImage: "/images/products/exotic-black-slab.jpg",
     sortOrder: 4,
@@ -72,7 +72,7 @@ export const PRODUCTS: ProductRecord[] = [
     description: "World-renowned emerald and forest green marble with intricate crystalline veins.",
     detail: `${SHARED_DETAIL} Udaipur Green Marble (Verde Guatemala / Indian Green) is extracted in Udaipur, Rajasthan and internationally celebrated for its rich emerald mineral body with fine serpentine veining. A global favourite for luxury architectural flooring, wall claddings, bath enclosures and monumental interiors.`,
     formatLabel: "Quarry Blocks & Slabs",
-    categories: ["Marble", "Exotic Stone", "Blocks", "Slabs"],
+    categories: ["Marble", "Exotic Stones", "Blocks", "Slabs"],
     primaryImage: "/images/products/udaipur-green-marble-block.jpg",
     detailImage: "/images/products/rajasthan-green-granite.jpg",
     sortOrder: 5,
@@ -128,14 +128,74 @@ export const PRODUCTS: ProductRecord[] = [
   },
 ];
 
+/** The exact four core stone categories of Mount Exports */
+export const STONE_CATEGORIES = [
+  {
+    id: "patagonia",
+    filterKey: "Patagonia",
+    name: "Patagonia",
+    subtitle: "Translucent Quartzite",
+    tagline: "Crystalline Quartz & Amber Warmth",
+    description:
+      "Internationally prized exotic quartzite displaying translucent crystalline fields, warm undertones and dramatic bookmatched movement — extraordinary for illuminated feature walls.",
+    image: "/images/products/patagonia-backlit.jpg",
+    secondaryImage: "/images/products/patagonia-bookmatch.jpg",
+    badge: "Exotic Quartzite",
+    characteristics: ["Translucent Quartz Fields", "Backlit Feature Installations", "Bookmatched Symmetry"],
+    countHint: "1 Premium Variety",
+  },
+  {
+    id: "exotic-stones",
+    filterKey: "Exotic Stones",
+    name: "Exotic Stones",
+    subtitle: "Rare & Own Quarry Stones",
+    tagline: "Cosmic Gold Swirls & Dramatic Mineral Fields",
+    description:
+      "Showcasing rare geological wonders including our own quarry Titanium Gold, Cosmic Black and Titanium Black with striking crystalline ribbons and bold dark matrixes.",
+    image: "/images/products/titanium-gold-slab.jpg",
+    secondaryImage: "/images/products/cosmic-black-slab.jpg",
+    badge: "Own Quarry & Rare Selection",
+    characteristics: ["Direct Quarry Ownership", "Gold & Amber River Veining", "High-Impact Statement Panels"],
+    countHint: "5 Exceptional Varieties",
+  },
+  {
+    id: "granite",
+    filterKey: "Granite",
+    name: "Granite",
+    subtitle: "Architectural & Monolithic",
+    tagline: "High Compressive Strength & Uniform Crystals",
+    description:
+      "Dense, low-porosity structural granites including Rajasthan Green and Titanium Gold, engineered by nature for monolithic exterior facades, grand staircases, and luxury countertops.",
+    image: "/images/products/rajasthan-green-granite.jpg",
+    secondaryImage: "/images/products/titanium-gold-block.jpg",
+    badge: "Export Grade Granite",
+    characteristics: ["Weather & Wear Resilient", "Monolithic Quarry Blocks", "High-Volume Container Export"],
+    countHint: "5 Heavy-Duty Varieties",
+  },
+  {
+    id: "marble",
+    filterKey: "Marble",
+    name: "Marble",
+    subtitle: "Heritage & Serpentine",
+    tagline: "Udaipur Emerald Green & Rose Heritage",
+    description:
+      "World-renowned Indian marbles originating from Udaipur and Rajasthan mineral deposits, spanning opulent emerald green serpentine to soft crystalline Rose Heritage.",
+    image: "/images/products/udaipur-green-marble-block.jpg",
+    secondaryImage: "/images/products/rose-heritage-marble.jpg",
+    badge: "Rajasthan Heritage",
+    characteristics: ["Authentic Udaipur Provenance", "Deep Emerald Serpentine", "Polished Luxury Interiors"],
+    countHint: "3 Heritage Varieties",
+  },
+] as const;
+
+export type StoneCategory = (typeof STONE_CATEGORIES)[number];
+
 export const PRODUCT_CATEGORIES = [
   "All Stone",
-  "Marble",
-  "Granite",
   "Patagonia",
-  "Exotic Stone",
-  "Blocks",
-  "Slabs",
+  "Exotic Stones",
+  "Granite",
+  "Marble",
 ] as const;
 
 export type HeroSlide = {

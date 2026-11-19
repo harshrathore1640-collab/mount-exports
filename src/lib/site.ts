@@ -57,11 +57,12 @@ export function productWhatsappUrl(productName: string): string {
 
 export const NAV_LINKS = [
   { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Products", href: "#products" },
+  { label: "Categories", href: "#categories" },
+  { label: "Collection", href: "#products" },
   { label: "Gallery", href: "#gallery" },
+  { label: "About Us", href: "#about" },
+  { label: "Why Us", href: "#why" },
   { label: "Export Process", href: "#process" },
-  { label: "Why Mount Exports", href: "#why" },
   { label: "Contact", href: "#contact" },
 ] as const;
 

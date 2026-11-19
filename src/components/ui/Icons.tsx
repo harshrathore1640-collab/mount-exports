@@ -222,3 +222,14 @@ export function ExpandIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function SparklesIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path
+        {...stroke}
+        d="m12 3 1.9 4.8L18.7 9.7l-4.8 1.9L12 16.4l-1.9-4.8L5.3 9.7l4.8-1.9L12 3ZM19 16l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9.9-2.1Z"
+      />
+    </svg>
+  );
+}

@@ -48,6 +48,23 @@
     color: var(--color-espresso);
   }
 
+  /* Custom Luxury Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #160f0a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3d2a1d;
+    border-radius: 4px;
+    border: 2px solid #160f0a;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c4a477;
+  }
+
   :focus-visible {
     outline: 2px solid var(--color-champagne);
     outline-offset: 3px;
@@ -230,6 +247,38 @@
 .group:hover .zoom-frame img,
 .zoom-frame:hover img {
   transform: scale(1.06);
+}
+
+/* ---------- Luxury Glass & Stone Cards ---------- */
+.glass-luxury {
+  background: rgba(33, 23, 16, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(196, 164, 119, 0.2);
+}
+
+.glass-luxury-card {
+  background: linear-gradient(135deg, rgba(42, 30, 22, 0.65) 0%, rgba(22, 15, 10, 0.88) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(196, 164, 119, 0.16);
+  transition: all 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.glass-luxury-card:hover {
+  border-color: rgba(196, 164, 119, 0.45);
+  transform: translateY(-4px);
+  box-shadow:
+    0 22px 50px -20px rgba(0, 0, 0, 0.85),
+    0 0 35px -8px rgba(196, 164, 119, 0.2);
+}
+
+.gold-glow {
+  box-shadow: 0 0 35px -5px rgba(196, 164, 119, 0.25);
+}
+
+.patagonia-amber-glow {
+  box-shadow: 0 0 50px -6px rgba(245, 158, 11, 0.32);
 }
 
 /* ---------- Buttons ---------- */

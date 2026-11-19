@@ -11,6 +11,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Process from "@/components/Process";
 import Products from "@/components/Products";
+import StoneCategories from "@/components/StoneCategories";
 import WhyMountExports from "@/components/WhyMountExports";
 import { FAQS, HERO_SLIDES } from "@/lib/content";
 import { getGalleryItems, getProducts } from "@/lib/repository";
@@ -24,8 +25,9 @@ export default async function HomePage() {
       <Header />
       <main id="main">
         <Hero slides={HERO_SLIDES} />
-        <About />
+        <StoneCategories />
         <Products products={products} />
+        <About />
         <Gallery items={gallery} />
         <Applications />
         <WhyMountExports />

@@ -11,6 +11,7 @@ import {
   MailIcon,
 } from "@/components/ui/Icons";
 import { Cta } from "@/components/ui/Primitives";
+import { selectStoneCategory } from "@/components/StoneCategories";
 import { cn } from "@/lib/cn";
 import { BUSINESS, EMAIL_URL, GENERAL_WHATSAPP_URL, NAV_LINKS, TEL_URL } from "@/lib/site";
 
@@ -202,6 +203,27 @@ export default function Header() {
               </a>
             );
           })}
+
+          {/* Quick Categories Bar in Mobile Menu */}
+          <div className="mt-4 border-b border-champagne/15 pb-4">
+            <p className="label-xs text-taupe mb-2.5">Stone Categories</p>
+            <div className="grid grid-cols-2 gap-2">
+              {["Patagonia", "Exotic Stones", "Granite", "Marble"].map((cat) => (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                    selectStoneCategory(cat);
+                  }}
+                  className="border border-champagne/20 bg-walnut/60 px-3 py-2 text-left text-xs tracking-wider text-beige hover:border-champagne hover:text-champagne transition-colors"
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-6 flex flex-col gap-3 pb-2">
             <Cta href="#contact" variant="champagne" magnetic={false} buttonClassName="w-full">
               Request a Quote
